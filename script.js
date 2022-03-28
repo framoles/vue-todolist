@@ -17,8 +17,9 @@ const app = new Vue({
             if (item.done) { return "done" }
         },
         addTodo() {
-            if (this.textValue.length > 0) {
-                this.toDo.push({ text: this.textValue, done: false });
+            let text = this.textValue.trim();
+            if (text.length > 0) {
+                this.toDo.push({ text: text, done: false });
             }
             else { alert("Empty value! Insert a text"); }
             this.textValue = "";
@@ -27,8 +28,10 @@ const app = new Vue({
             this.toDo.splice(index, 1);
         },
         changeDone(item) {
-            if (item.done) { item.done = false }
-            else { item.done = true }
+            item.done = !item.done
         },
+        removeAll() {
+            this.toDo = [];
+        }
     }
 })
