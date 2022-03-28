@@ -16,14 +16,19 @@
 
 <body>
     <div id="root">
-        <input type="text" placeholder="Add new task" v-model="textValue" @keyUp.enter="addTodo">
-        <button @click="addTodo">Add</button>
-        <ul>
-            <li v-for="(item,index) in toDo" :class="checkDone(item)" @click="changeDone(item)">
-                {{item.text}}
-                <i class="fa-solid fa-trash" @click="removeTodo(index)"></i>
-            </li>
-        </ul>
+        <div id="container">
+            <h1>TO DO LIST APP</h1>
+            <div class="addClass">
+                <input type="text" placeholder="Add new task" v-model="textValue" @keyUp.enter="addTodo">
+                <a href="#" @click="addTodo"><i class="fa-solid fa-plus"></i></a>
+            </div>
+            <ul>
+                <li v-for="(item,index) in toDo" @click="changeDone(item)">
+                    <p :class="checkDone(item)">{{item.text}}</p>
+                    <i class="fa-solid fa-trash" @click="removeTodo(index)"></i>
+                </li>
+            </ul>
+        </div>
     </div>
 </body>
 

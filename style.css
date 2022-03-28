@@ -1,3 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background-color: rgb(88, 170, 170);
+}
+
+#container{
+    width: 400px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.addClass{
+    display: flex;
+    justify-content: space-between;
+}
+
+input{
+    width: calc(100% - 35px);
+    font-size:x-large;
+    border: 0.5px solid rgb(211, 211, 211);
+}
+
+a{
+    background-color: rgb(161, 118, 201);
+    text-decoration: none;
+    color: white;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+a:hover{
+    background-color: rgb(104, 76, 131);
+    transition: 500ms;
+}
+
 .done{
     text-decoration: line-through;
 }
@@ -5,4 +49,28 @@
 li{
     cursor: pointer;
     margin: 10px 0;
+    list-style: none;
+    background-color: rgb(233, 233, 233);
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+li i.fa-trash{
+    display: none;
+}
+
+li:hover i.fa-trash{
+    display: block;
+}
+
+
+h1{
+    margin: 20px 0;
+    color: rgb(43, 42, 42);
+}
+
+.fa-trash:hover{
+    color: red;
+    transition: 300ms;
 }

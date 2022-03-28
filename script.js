@@ -17,11 +17,13 @@ const app = new Vue({
             if (item.done) { return "done" }
         },
         addTodo() {
-            this.toDo.push({ text: this.textValue, done: false });
+            if (this.textValue.length > 0) {
+                this.toDo.push({ text: this.textValue, done: false });
+            }
+            else { alert("Empty value! Insert a text"); }
             this.textValue = "";
         },
         removeTodo(index) {
-            console.log(index);
             this.toDo.splice(index, 1);
         },
         changeDone(item) {
